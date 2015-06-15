@@ -208,8 +208,8 @@ func main() {
 			verboseOutput(db, orgSeqId)
 			if flagMaxSeedsGB > 0 && orgSeqId%10000 == 0 {
 				db.CoarseDB.Seeds.MaybeWipe(flagMaxSeedsGB)
+        runtime.GC()
 			}
-      runtime.GC()
 		}
 	}
 	cablastp.Vprintln("\n")
