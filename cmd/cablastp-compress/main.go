@@ -209,6 +209,7 @@ func main() {
 			if flagMaxSeedsGB > 0 && orgSeqId%10000 == 0 {
 				db.CoarseDB.Seeds.MaybeWipe(flagMaxSeedsGB)
 			}
+      runtime.GC()
 		}
 	}
 	cablastp.Vprintln("\n")
